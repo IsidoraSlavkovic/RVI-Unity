@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(1f, 5f)] private float speed = 5f;
     [SerializeField] Rigidbody rigidbody;
     [SerializeField] Camera cam;
+    [SerializeField] Weapon weapon;
     // Start is called before the first frame update
     private void Start()
     {
@@ -31,5 +32,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 changeInPosition = new Vector3(horisontal, 0f, vertical);
         Vector3 goToPositon = transform.position + changeInPosition * speed * Time.deltaTime;
         rigidbody.MovePosition(goToPositon);
+
+        if (Input.GetMouseButton(0)) {
+            if (weapon != null) {
+                weapon.Shoot();
+            }
+        }
     }
 }
