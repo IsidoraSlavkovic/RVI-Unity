@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
     private float horisontal;
     [SerializeField, Range(1f, 5f)] private float speed = 5f;
+    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] Camera cam;
     // Start is called before the first frame update
     private void Start()
     {
@@ -20,6 +22,14 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxis("Vertical"); // vertical movement in range [-1, 1]
         horisontal = Input.GetAxis("Horizontal"); // horisontal movement in range [-1, 1]
         
-        transform.Translate(new Vector3(horisontal, 0f, vertical) * Time.deltaTime * speed);
+        RaycastHit hit;
+        if(Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
+        {
+            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+        }
+
+        Vector3 changeInPosition = new Vector3(horisontal, 0f, vertical);
+        Vector3 goToPositon = transform.position + changeInPosition * speed * Time.deltaTime;
+        rigidbody.MovePosition(goToPositon);
     }
 }
