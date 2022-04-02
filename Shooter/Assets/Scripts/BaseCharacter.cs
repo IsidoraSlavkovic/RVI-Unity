@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseCharacter : MonoBehaviour, IDamageable
 {
-    private int health;
+    [SerializeField] private int health = 9;
     public int Health { get { return health; } }
 
     public void Die()
@@ -14,7 +14,10 @@ public class BaseCharacter : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
+        Debug.Log(health);
+        Debug.Log(damage);
         health -= damage;
+        Debug.Log(health);
         if(health <= 0)
         {
             Die();
