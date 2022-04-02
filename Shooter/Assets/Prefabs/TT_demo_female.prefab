@@ -405,9 +405,10 @@ GameObject:
   - component: {fileID: 8842406567603171931}
   - component: {fileID: 8842406567603171930}
   - component: {fileID: 8842406567603171925}
+  - component: {fileID: -7065589531776275594}
   m_Layer: 0
   m_Name: TT_demo_female
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,9 +483,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26497da41dbba4b1e98a72664b33d1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 9
   player: {fileID: 8465070367854257618, guid: 8f75a6ce92df920028d0f0326fcf37f9, type: 3}
   navMeshAgent: {fileID: 8842406567603171930}
-  moveSpeed: 5
+  moveSpeed: 2
+--- !u!136 &-7065589531776275594
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842406567603171929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8842406567661903550
 GameObject:
   m_ObjectHideFlags: 0

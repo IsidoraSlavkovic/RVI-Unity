@@ -4557,7 +4557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnedEnemies: []
   enemyPrefab: {fileID: 8842406567603171929, guid: 9be6fc2215b77f959b57efaeeca51933, type: 3}
-  numberOfEnemies: 50
+  numberOfEnemies: 3
 --- !u!1 &1667269219
 GameObject:
   m_ObjectHideFlags: 0
